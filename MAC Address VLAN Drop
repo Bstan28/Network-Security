@@ -1,0 +1,40 @@
+def print_mac_address_table(mac_addresses, vlan_list):
+    for line in mac_addresses.splitlines():
+        if line:
+            for vlan in vlan_list:
+                print(f"mac address-table static {line} vlan {vlan} drop")
+        else:
+            continue
+
+mac_addresses = """
+11:11:11:11:11:11
+22:22:22:22:22:22
+33:33:33:33:33:33
+44:44:44:44:44:44
+"""
+
+vlan_list = [10,20,30,40,50]
+
+print_mac_address_table(mac_addresses, vlan_list)
+
+##### print_mac_address_table() prints out the following information you can copy and paste into your Cisco switch:
+# mac address-table static 11:11:11:11:11:11 vlan 10 drop
+# mac address-table static 11:11:11:11:11:11 vlan 20 drop
+# mac address-table static 11:11:11:11:11:11 vlan 30 drop
+# mac address-table static 11:11:11:11:11:11 vlan 40 drop
+# mac address-table static 11:11:11:11:11:11 vlan 50 drop
+# mac address-table static 22:22:22:22:22:22 vlan 10 drop
+# mac address-table static 22:22:22:22:22:22 vlan 20 drop
+# mac address-table static 22:22:22:22:22:22 vlan 30 drop
+# mac address-table static 22:22:22:22:22:22 vlan 40 drop
+# mac address-table static 22:22:22:22:22:22 vlan 50 drop
+# mac address-table static 33:33:33:33:33:33 vlan 10 drop
+# mac address-table static 33:33:33:33:33:33 vlan 20 drop
+# mac address-table static 33:33:33:33:33:33 vlan 30 drop
+# mac address-table static 33:33:33:33:33:33 vlan 40 drop
+# mac address-table static 33:33:33:33:33:33 vlan 50 drop
+# mac address-table static 44:44:44:44:44:44 vlan 10 drop
+# mac address-table static 44:44:44:44:44:44 vlan 20 drop
+# mac address-table static 44:44:44:44:44:44 vlan 30 drop
+# mac address-table static 44:44:44:44:44:44 vlan 40 drop
+# mac address-table static 44:44:44:44:44:44 vlan 50 drop
